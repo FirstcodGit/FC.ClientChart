@@ -14,5 +14,4 @@
     <ProjectReference Include="..\Shared\FC.ClientChart.Shared.csproj" />
   </ItemGroup>
 
-
 </Project>
