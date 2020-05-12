@@ -1,0 +1,19 @@
+﻿@page "/"
+@inject HttpClient Http
+
+<ScatterChart Model="@Model" Param="@Param" />
+
+@code
+{
+    public ScatterModel Model { get; set; } = new ScatterModel();
+
+    public Parameters Param { get; set; } = new Parameters();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Param = new Parameters() { Title = "Blazor Client", SubTitle = "Highchart" };
+
+        Model = await Http.GetFromJsonAsync<ScatterModel>("api/Charts");
+    }
+}
